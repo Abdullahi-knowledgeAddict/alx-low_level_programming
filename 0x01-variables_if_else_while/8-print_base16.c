@@ -9,17 +9,9 @@ int main(void)
 	int x;
 	int a;
 
-	x = 0;
-	a = 'a';
-
-	while (x >= 15)
-	{
-		if (x >= 10)
-			for (; a <= 'f'; a++)
-				putchar(a);
-		else
-			for (; x <= 9; x++)
-				putchar(x);
-	}
+	for (x = '0'; x <= '9'; x++)
+		putchar(x);
+	for (a = 'a'; a <= 'f'; a++)
+		putchar(a);
 	putchar('\n');
 }
