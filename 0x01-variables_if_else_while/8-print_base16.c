@@ -6,20 +6,20 @@
  */
 int main(void)
 {
-	int hex;
+	int x;
+	int a;
 
-	for (hex = '0'; hex <= 15; hex++)
-		if (hex == 10)
-			putchar('a');
-		else if (hex == 11)
-			putchar('b');
-		else if (hex == 12)
-			putchar('c');
-		else if (hex == 13)
-			putchar('d');
-		else if (hex == 14)
-			putchar('e');
+	x = 0;
+	a = 'a';
+
+	while (x >= 15)
+	{
+		if (x >= 10)
+			for (; a <= 'f'; a++)
+				putchar(a);
 		else
-			putchar('f');
-	return (0);
+			for (; x <= 9; x++)
+				putchar(x);
+	}
+	putchar('\n');
 }
