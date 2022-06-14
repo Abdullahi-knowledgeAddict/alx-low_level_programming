@@ -17,7 +17,10 @@ int main(void)
 			putchar(' ');
 		}
 		else
+		{
+			putchar('\n');
 			break;
+		}
 	}
 	return (0);
 }
