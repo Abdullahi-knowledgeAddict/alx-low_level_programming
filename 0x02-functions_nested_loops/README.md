@@ -1,1 +1,4 @@
-Readme file will be updated later 
+#######################################################################
+#learning to make and use header file along with nested loop          #
+#                                                                     #
+######################################################################

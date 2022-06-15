@@ -1,8 +1,9 @@
 #include "main.h"
 /**
- * main - Entry point
+ * main - prints the word "_putchar" using the defined
+ * function _putchar.
  *
- * Return: Always 0 (Success)
+ * Return: always zero (success)
  */
 int main(void)
 {
