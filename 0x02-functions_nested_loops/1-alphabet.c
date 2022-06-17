@@ -1,11 +1,12 @@
 #include <stdio.h>
 /**
- * print_alphabet - prints the letters fo the 
+ * print_alphabet - prints the letters fo the
  * alphabets
  */
 void print_alphabet(void)
 {
 	int i;
+	
 	for (i = 'a'; i <= 'z'; i++)
 	{
 		putchar(i);
