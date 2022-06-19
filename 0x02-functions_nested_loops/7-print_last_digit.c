@@ -13,5 +13,6 @@ int print_last_digit(int d)
 
 	if (d < 0)
 		result = -1 * result;
+	result = ((char) result);
 	return (result);
 }
