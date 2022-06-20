@@ -6,6 +6,10 @@
  */
 void print_to_98(int n)
 {
+	int x;
+	
+	x = n;
+
 	for (; x != 98;)
 	{
 		if (x > 98)
