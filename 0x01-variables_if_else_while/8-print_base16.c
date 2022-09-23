@@ -1,19 +1,22 @@
 #include <stdio.h>
 
 /**
- * main - print single digits of base 16.
+ * main - Prints all the numbers of base 16 in lowercase.
  *
- * Return: Always zero (0) success.
+ * Return: Always 0.
  */
 int main(void)
 {
-	int n;
-	char a;
+	int num;
+	char letter;
 
-	for (n = 0; n <=  9; n++)
-		putchar(n + '0');
-	for (a = 'a'; a <= 'f'; a++)
-		putchar(a);
-	putchar(10);
+	for (num = 0; num < 10; num++)
+		putchar((num % 10) + '0');
+
+	for (letter = 'a'; letter <= 'f'; letter++)
+		putchar(letter);
+
+	putchar('\n');
+
 	return (0);
 }
