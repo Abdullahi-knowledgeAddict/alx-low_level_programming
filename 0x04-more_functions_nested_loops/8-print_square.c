@@ -1,28 +1,28 @@
 #include "main.h"
 
 /**
- * print_square - a function that prints a square, followed by a new line
- * @size: size of both width and length
- * Return: a square made of '#'
+ * print_square - print diagonal to terminal , using specified magnitude where a magnitude is Hash.
+ * @size: magnitude (the number of Hash)
  */
 void print_square(int size)
 {
-	int co, ro;
+	int length;
+	int breadth;
 
-	if (size <= 0)
+	length = size;
+	if (size > 0)
 	{
-		_putchar('\n');
-	}
-	else
-	{
-		for (co = 1; co <= size; co++)
+		while (length > 0)
 		{
-			_putchar('#');
-			for (ro = 2; ro <= size; ro++)
+
+			breadth = size;
+			while (breadth > 0)
 			{
 				_putchar('#');
+				breadth--;
 			}
-			_putchar('\n');
+			_putchar(10);
+			length--;
 		}
 	}
 }

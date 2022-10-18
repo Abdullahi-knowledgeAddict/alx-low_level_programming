@@ -1,17 +1,13 @@
 #include "main.h"
 
 /**
- * print_numbers - prints 0123456789\n
- *
- * Return: void
+ * print_numbers - prints single digits
  */
 void print_numbers(void)
 {
-	char c;
+	int a;
 
-	for (c = '0'; c <= '9'; c++)
-	{
-		_putchar(c);
-	}
+	for (a = 0; a <= 9; a++)
+		_putchar(a + '0');
 	_putchar('\n');
 }

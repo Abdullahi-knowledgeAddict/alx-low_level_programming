@@ -1,24 +1,18 @@
 #include "main.h"
 
 /**
- * print_diagonal - a function that draws a diagonal line on the terminal
- * @n: length of diagonal
- *
- * Return: void
+ * print_diagonal - print diagonal to terminal , using specified magnitude where a magnitude is a slash.
+ * @n: magnitude (the number of underscore)
  */
 void print_diagonal(int n)
 {
-	int a, b;
-
-	if (n <= 0)
-		_putchar('\n');
-	for (a = 0; a < n; a++)
+	if (n > 0)
 	{
-		for (b = 0; b < a; b++)
+		while (n > 0)
 		{
-			_putchar(' ');
+			_putchar('\');
+			n--;
 		}
-		_putchar('\\');
-		_putchar('\n');
 	}
+	_putchar(10);
 }

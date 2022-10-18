@@ -1,31 +1,33 @@
 #include "main.h"
 
 /**
- * print_triangle - a function that prints a triangle
- * @size: size of the triangle
- * Return: triangle of '#'s
+ * print_triangle - print triangle to screen
+ * @size: the base and height ( the number of #s)
  */
 void print_triangle(int size)
 {
-	int sp, ro, tr;
+	int height, base, hashno;
 
-	if (size <= 0)
+	if (size > 0)
 	{
-		_putchar('\n');
-	}
-	else
-	{
-		for (ro = 0; ro <= (size - 1); ro++)
+
+		height = size;
+		hashno = 1;
+		for (;height > 0; height--)
 		{
-			for (sp = 0; sp < (size - 1) - ro; sp++)
+			base = size;
+			for(;base > 0;base--)
 			{
+				if ( base > hashno)
 				_putchar(' ');
+				else
+					_putchar('#');
 			}
-			for (tr = 0; tr <= ro; tr++)
-			{
-				_putchar('#');
-			}
-			_putchar('\n');
+			hashno++;
+			_putchar(10);
 		}
 	}
+	else
+		_putchar(10);
 }
+
