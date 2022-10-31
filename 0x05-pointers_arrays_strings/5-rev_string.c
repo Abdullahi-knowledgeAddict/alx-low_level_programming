@@ -1,21 +1,21 @@
-#include "main.h"
-
 /**
- * rev_string - Reverses a string.
- * @s: string to be reserved.
+ * rev_string - reverse the string characters
+ * @s: the string to be reversed
  */
 void rev_string(char *s)
-{
-	int i = 0, len = 0;
-	char tmp;
-
-	while (s[i++])
-		len++;
-
-	for (i = len - 1; i >= len / 2; i--)
+{	
+	char copy;
+	int length, half, accessor;
+	
+	for (length = 0; s[length] != '\0'; length++);
+	half = length / 2;
+	length--;
+	accessor = 0;
+	while (half--)
 	{
-		tmp = s[i];
-		s[i] = s[len - i - 1];
-		s[len - i - 1] = tmp;
+		copy = s[accessor];
+		s[accessor] = s[length - accessor];
+		s[length - accessor] = copy;
+		accessor++;
 	}
 }

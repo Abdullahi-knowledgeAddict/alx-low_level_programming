@@ -1,18 +1,16 @@
 #include "main.h"
-
 /**
- * puts2 - Prints one char out of two of a string.
- * @str: The string containing characters.
+ * puts2 - print every other character of a given string.
+ * @str: the address of the string.
  */
 void puts2(char *str)
 {
-	int i = 0, len = 0;
+	int index;
 
-	while (str[i++])
-		len++;
-
-	for (i = 0; i < len; i += 2)
-		_putchar(str[i]);
-
-	_putchar('\n');
+	for (index = 0; str[index] != '\0'; index++)
+	{
+		if ((index % 2) == 0)
+			_putchar((str[index]));
+	}
+	_putchar(10);
 }
