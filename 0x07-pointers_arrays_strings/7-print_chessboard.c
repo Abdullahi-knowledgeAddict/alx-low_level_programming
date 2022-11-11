@@ -4,15 +4,20 @@
  * print_chessboard - Prints a chessboard.
  * @a: The chessboard to be printed.
  */
-void print_chessboard(char (*a)[8])
+void print_chessboard(char(*a)[8])
 {
-	int index1, index2;
+	int i, j;
 
-	for (index1 = 0; a[index1][7]; index1++)
+	for (i = 0; a[i][0] != 0; i++)
 	{
-		for (index2 = 0; index2 < 8; index2++)
-			_putchar(a[index1][index2]);
-
-		_putchar('\n');
+		for (j = 0; j <= 7; j++)
+		{
+			_putchar(a[i][j]);
+			if (j == 7)
+				_putchar(10);
+		}
 	}
 }
+
+
+
