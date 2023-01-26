@@ -1,34 +1,42 @@
-#include "main.h"
 #include <stdlib.h>
 
 /**
- * _strdup - Returns a pointer to a newly-allocated space in memory
- *           containing a copy of the string given as parameter.
- * @str: The string to be copied.
- *
- * Return: If str == NULL or insufficient memory is available - NULL.
- *         Otherwise - a pointer to the duplicated string.
+ * recurse_length - finds the length of a string using recursion
+ * @str: A pointer to the string
+ * Return: the absolute size of the string in memory
+ */
+int recurse_length(char *str)
+{
+	int i;
+
+	i = 1;
+	if (*str)
+		i += recurse_length(str + 1);
+	return (i);
+}
+/**
+ * recurse_duplicate - duplicates a string to new memory using recursion
+ * @str: string to be duplicated
+ * @t: pointer to the memory it will be duplicated to.
+ */
+void recurse_duplicate(char *str, char *t)
+{
+	*t = *str;
+	if (*str)
+		recurse_duplicate(&str[1], &t[1]);
+}
+/**
+ * _strdup - duplicates a string
+ * @str: the string to be duplicated
+ * Return: A pointer to the duplicated string
  */
 char *_strdup(char *str)
 {
-	char *duplicate;
-	int index, len = 0;
+	char *t;
 
-	if (str == NULL)
+	t = malloc(sizeof(char) * (recurse_length(str)));
+	if (t == NULL || str == NULL)
 		return (NULL);
-
-	for (index = 0; str[index]; index++)
-		len++;
-
-	duplicate = malloc(sizeof(char) * (len + 1));
-
-	if (duplicate == NULL)
-		return (NULL);
-
-	for (index = 0; str[index]; index++)
-		duplicate[index] = str[index];
-
-	duplicate[len] = '\0';
-
-	return (duplicate);
+	recurse_duplicate(str, t);
+	return (t);
 }
