@@ -1,38 +1,27 @@
-#include "main.h"
-
 /**
- * cap_string - Capitalizes all words of a string.
- * @str: The string to be capitalized.
- *
- * Return: A pointer to the changed string.
+ * cap_string - capitalize the first char of each world
+ * @s: given string
+ * Return: the converted string
  */
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	int index = 0;
+	int index1, index2;
+	char *t = ",;.!?\"(){}\t\n\v ";
 
-	while (str[index])
+	for (index1 = 0; s[index1]; index1++)
 	{
-		while (!(str[index] >= 'a' && str[index] <= 'z'))
-			index++;
-
-		if (str[index - 1] == ' ' ||
-			str[index - 1] == '\t' ||
-			str[index - 1] == '\n' ||
-			str[index - 1] == ',' ||
-			str[index - 1] == ';' ||
-			str[index - 1] == '.' ||
-			str[index - 1] == '!' ||
-			str[index - 1] == '?' ||
-			str[index - 1] == '"' ||
-			str[index - 1] == '(' ||
-			str[index - 1] == ')' ||
-			str[index - 1] == '{' ||
-			str[index - 1] == '}' ||
-			index == 0)
-			str[index] -= 32;
-
-		index++;
+		for (index2 = 0; t[index2]; index2++)
+		{
+			if (s[index1] == t[index2])
+			{
+				if (s[index1 + 1] >= 'a' && s[index1 + 1] <= 'z')
+					s[index1 + 1] = s[index1 + 1] - 32;
+			}
+			else
+				continue;
+		}
 	}
-
-	return (str);
+	return (s);
 }
+
+
