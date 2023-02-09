@@ -1,16 +1,11 @@
-#include "dog.h"
 #include <stdlib.h>
+#include "dog.h"
 
 /**
- * free_dog - Frees dogs.
- * @d: The dog to be freed.
+ * free_dog - frees the memory space appointed by malloc to dog_t type variable
+ * @d: a pointer to dog_t pointer
  */
 void free_dog(dog_t *d)
 {
-	if (d == NULL)
-		return;
-
-	free(d->owner);
-	free(d->name);
 	free(d);
 }
