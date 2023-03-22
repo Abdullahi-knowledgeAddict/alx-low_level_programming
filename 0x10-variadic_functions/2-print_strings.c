@@ -1,38 +1,57 @@
-#include "variadic_functions.h"
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
 
 /**
- * print_strings - Prints strings, followed by a new line.
- * @separator: The string to be printed between strings.
- * @n: The number of strings passed to the function.
- * @...: A variable number of strings to be printed.
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
  *
- * Description: If separator is NULL, it is not printed.
- *              If one of the strings if NULL, (nil) is printed instead.
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
+/** 
+ * sp - prints given string to stdout
+ * @s: the given string
+ */
+void sp(const char *s)
+{
+	if (s == NULL)
+	{
+		sp("(nil)");
+		return;
+	}
+	_putchar(s[0]);
+	if (s[1])
+		sp(s + 1);
+}
+void car(__va_list_tag *v)
+{
+	printf("%s\n", va_arg(*v, char *));
+}
+
+/**
+ * print_strings - prints the given numbers
+ * @separator: pointer to a character to be printed between each number
+ * @n: the number of integer(numbers) to be printed
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	va_list strings;
-	char *str;
-	unsigned int index;
-
-	va_start(strings, n);
-
-	for (index = 0; index < n; index++)
+	va_list v;
+	unsigned int i;
+	
+	va_start(v, n);
+	for (i = 0; i <  n; i++)
 	{
-		str = va_arg(strings, char *);
-
-		if (str == NULL)
-			printf("(nil)");
-		else
-			printf("%s", str);
-
-		if (index != (n - 1) && separator != NULL)
-			printf("%s", separator);
+		/*sp(va_arg(v, char *));*/
+		car(v);
+		if ((i <  n - 1) && (separator != NULL))
+			sp(separator);
 	}
-
-	printf("\n");
-
-	va_end(strings);
+	va_end(v);
+	sp("\n");
 }

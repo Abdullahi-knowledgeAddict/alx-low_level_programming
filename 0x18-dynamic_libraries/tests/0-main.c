@@ -1,4 +1,3 @@
-#include "../holberton.h"
 #include <stdio.h>
 
 /**
@@ -8,6 +7,6 @@
  */
 int main(void)
 {
-	printf("%d\n", _strlen("Holberton"));
-	return (EXIT_SUCCESS);
+	printf("%s\n", "Holberton");
+	return (0);
 }
