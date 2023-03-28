@@ -8,7 +8,10 @@
 size_t list_len(const list_t *h)
 {
 	size_t i;
+	list_t *copy;
 
-	for (i = 0; h != NULL; i++, h = h->next);
+	copy = h;
+	for (i = 0; copy; copy = copy->next)
+		i++;
 	return (i);
 }

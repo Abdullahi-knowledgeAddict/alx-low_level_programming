@@ -2,10 +2,9 @@
 
 /**
  * prints - a default string before main is executed
- * @s: the pointer to the string to be printed
  */
-void prints()
+void prints(void)
 {
-	printf("You're beat! and yet, you must allow,\nI bore my house upon\
- my back!\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
