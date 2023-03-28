@@ -15,15 +15,17 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	unsigned int i;
 
 	copy = *head;
-	if(index == 0 && copy->next)
+	if (index == 0 && copy->next)
 	{
 		*head = copy->next;
 		free(copy);
 		return (1);
 	}
-	for(i = 0; copy->next && i < index - 1; copy = copy->next, i++);
+	for (i = 0; copy->next && i < index - 1; copy = copy->next)
+		i++;
 
-	if(copy->next){
+	if (copy->next)
+	{
 		prev = copy->next;/*address to be deleted*/
 		copy->next = prev->next;
 		free(prev);

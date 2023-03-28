@@ -19,9 +19,9 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		copy = *head;
 		new->n = n;
-		for(i = 0; copy; copy = copy->next, i++)
+		for (i = 0; copy; copy = copy->next, i++)
 		{
-			if(i == (idx - 1))
+			if (i == (idx - 1))
 			{
 				copy2 = copy->next;
 				copy->next = new;
