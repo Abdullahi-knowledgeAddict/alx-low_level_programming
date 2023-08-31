@@ -1,58 +1,46 @@
-C - Bit manipulation
+*************__0x14. C-Bit manipution__**************************************
+.Starting bit manipution project;
+so, what are bit manipulations ?
+Bit manipulation, also known as bitwise operations, involves manipulating individual bits of data rather than whole bytes or larger units. This technique is commonly used in various programming scenarios for optimizing code, conserving memory, and implementing certain algorithms efficiently. Here are some applications of bit manipulation:
 
-In this project, I learned how to manipulate bits and use the bitwise operators >>, <<, &, |, and ^ in C.
+1. **Flag Manipulation:** Flags are often used to store binary state information. Bit manipulation is frequently used to set, clear, toggle, or check these flags in a memory-efficient manner.
 
-Helper File 🙌
+2. **Bit Masks:** Bit masks are used to extract specific bits from a larger set of bits or to isolate certain bits. This is useful for extracting specific fields from binary data structures.
 
-    _putchar.c: C function that writes a character to stdout.
+3. **Checking Odd/Even:** You can determine whether an integer is odd or even by looking at its least significant bit (LSB). If the LSB is 0, the number is even; if it's 1, the number is odd.
 
-Header File 📁
+4. **Setting and Clearing Bits:** Bit manipulation can be used to set or clear specific bits in a number without affecting the other bits. This is useful for toggling specific flags or options.
 
-    main.h: Header file containing prototypes for all functions written in the project.
+5. **Bitwise Operations in Encryption:** Certain encryption algorithms and hashing functions utilize bitwise operations to transform and manipulate data efficiently, often in ways that are difficult to reverse-engineer.
 
-File 	Prototype
-0-binary_to_uint.c 	unsigned int binary_to_uint(const char *b);
-1-print_binary.c 	void print_binary(unsigned long int n);
-2-get_bit.c 	int get_bit(unsigned long int n, unsigned int index);
-3-set_bit.c 	int set_bit(unsigned long int *n, unsigned int index);
-4-clear_bit.c 	int clear_bit(unsigned long int *n, unsigned int index);
-5-flip_bits.c 	unsigned int flip_bits(unsigned long int n, unsigned long int m);
-100-get_endianness.c 	int get_endianness(void);
-Tasks 📃
+6. **Binary Representation:** Bit manipulation is useful for converting between binary and decimal representations of numbers.
 
-    0. 0
-        0-binary_to_uint.c: C function that converts a binary number to an unsigned int.
-        The parameter b is a pointer to a string of 0 and 1 characters.
-        If b is NULL or there are one or more characters in b that are not 0 or 1 - returns 0.
-        Otherwise - returns the converted number.
+7. **Counting Bits:** Bit manipulation techniques can be used to count the number of set (1) bits in an integer, a process known as "bit counting" or "population count."
 
-    1. 1
-        1-print_binary.c: C function that prints the binary representation of a number.
+8. **Sparse Data Structures:** Bit manipulation can be used to implement sparse data structures, such as bitmaps and bloom filters, where memory efficiency is crucial.
 
-    2. 10
-        2-get_bit.c: C function that returns the value of a bit at a given index.
-        Indices start at 0.
-        If an error occurs - returns -1.
-        Otherwise - returns the value of the bit at the given index.
+9. **Finding Unique Elements:** Bit manipulation can help find unique elements in an array by treating elements as bitsets and using XOR operations.
 
-    3. 11
-        3-set_bit.c: C function that sets the value of a bit at a given index to 1.
-        If an error occurs - returns -1.
-        Otherwise - returns 1.
+10. **Optimizing Arithmetic Operations:** Some arithmetic operations, such as multiplication and division by powers of 2, can be optimized using bit manipulation.
 
-    4. 100
-        4-clear_bit.c: C function that sets the value of a bit at a given index to 0.
-        If an error occurs - returns -1.
-        Otherwise - returns 1.
+11. **Bitwise Shifts:** Left and right shifts can be used to multiply or divide integers by powers of 2. They are also used in creating bit masks and extracting specific bit ranges.
 
-    5. 101
-        5-flip_bits.c: C function that returns the number of bits needed to be flipped to get from one number to another.
+12. **Memory Allocation:** Bit manipulation can be used for efficient memory allocation in embedded systems or resource-constrained environments.
 
-    6. Endianness
-        100-get_endianness.c: C function that checks the endianness.
-        If big-endian - returns 0.
-        If little-endian - returns 1.
+13. **Error Detection and Correction:** Bit manipulation techniques are used in error detection and correction codes, where specific bits are manipulated to add redundancy and enable error recovery.
 
-    7. Crackme3
-        101-password: File containing the password for the crackme3 executable.
+14. **Cryptography:** Bit manipulation is crucial in cryptographic algorithms for operations like key generation, encryption, and decryption.
 
+15. **Networking and Protocol Implementation:** Bit manipulation is used to create and interpret network protocols and data packets.
+
+Overall, bit manipulation is a powerful tool for optimizing code, reducing memory usage, and implementing algorithms that rely on binary data representation and manipulation. It's particularly important in low-level programming, embedded systems, cryptography, and various algorithmic challenges.
+_____________Functions(created for the tasks so far)____________________________
+ 
+ * binary_to_uint - converts a binary number(quoted as string) to unsigned int
+ * get_endianness - of the machine it is compiled and ran on
+ * print_binary - prints the binary representation of a number
+ * get_bit - get the value of a bit at a given index
+ * set_bit - at a given index to 1 at a given index
+ * clear_bit - sets the value of a bit to 0 at a given index
+ * flip_bits - determines the number of bit to be flipped to get from
+ * _putchar - prints a char to the screen using a syscall
