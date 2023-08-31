@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * get_endianness - of the machine it is compiled and ran on
  * endianess is a way in which bits are stored in the memory.
@@ -12,9 +13,20 @@
  */
 int get_endianness(void)
 {
-	unsigned char  byte = 0x4F52;
+	 unsigned short byte = 0x4F52;
+	 unsigned char *bp __attribute__((unused));
+	 unsigned char char1, char2;
 
-	unsigned char *bp = (unsigned char *) &byte;
+	 char1 = byte>>8;
+	 char2 = (byte<<8)>>8;
+	 printf("which is greater %d or %d\n", char1, char2);
+	 if (byte>>8 > (byte<<8)>>8)
+		 return (0);
+	 return (1);
+	/*bp = (unsigned char *) &byte;*/
 
-	return (*bp < *(bp + 1));/*return 0  if false express  (big endian)*/
+/*	printf("size of short %lu\n", sizeof(unsigned short));
+	printf("%d (@%p) > %d (@%p)\n", *bp, bp,  *(bp + 1), bp + 1);
+	return ((*bp < *(bp + 1)));
+	returns 0  if false express  (big endian)*/
 }
