@@ -6,7 +6,8 @@
  * @letters: the actual or total number of letters to be read to stdout
  * Return: the total number of letters (chars) it read and print
  */
-ssize_t read_textfile (const char *filename, size_t letters)
+
+ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	size_t bytes;
@@ -25,7 +26,8 @@ ssize_t read_textfile (const char *filename, size_t letters)
 		free(s);
 		return (0);
 	}
-	if (!(bytes = read(fd, s, letters)))
+	bytes = read(fd, s, letters);
+	if (!bytes)
 	{
 		close(fd);
 		free(s);
